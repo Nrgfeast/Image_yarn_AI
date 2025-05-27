@@ -4,7 +4,7 @@ import requests
 import os
 import time
 
-REPLICATE_API_TOKEN = "r8_dZTjFvipGDphluijx8ZCt4QkKOotrCz3UXufw"  # ЗАМЕНИ на свой
+REPLICATE_API_TOKEN = "r8_8avES9n9VW93xTWCPjq8LqgV2flJuNP3Cwm05"  # ЗАМЕНИ на свой
 
 app = FastAPI()
 

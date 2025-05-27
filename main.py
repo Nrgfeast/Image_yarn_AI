@@ -4,7 +4,7 @@ import requests
 import os
 import time
 
-REPLICATE_API_TOKEN = "your_replicate_token_here"  # ЗАМЕНИ на свой
+REPLICATE_API_TOKEN = "r8_dZTjFvipGDphluijx8ZCt4QkKOotrCz3UXufw"  # ЗАМЕНИ на свой
 
 app = FastAPI()
 
@@ -13,7 +13,7 @@ class PromptData(BaseModel):
 
 @app.post("/generate")
 async def generate_image(data: PromptData):
-    prompt = f"A mannequin wearing a hand-knitted sweater in yarn color {data.color_code}, standing in nature, cinematic lighting, high quality"
+    prompt = f"A generated model wearing a hand-knitted sweater in yarn color {data.color_code}, standing in nature, cinematic lighting, high quality"
 
     try:
         response = requests.post(

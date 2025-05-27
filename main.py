@@ -3,7 +3,7 @@ from pydantic import BaseModel
 import openai
 
 # ВРЕМЕННЫЙ тестовый ключ (в реальности — никогда так не делать)
-openai.api_key = "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"
+openai.api_key = "sk"
 
 app = FastAPI()
 

@@ -13,7 +13,12 @@ class GenerateRequest(BaseModel):
 
 @app.post("/generate")
 async def generate_image(req: GenerateRequest):
-    prompt = f"A stylish knitted garment made of yarn in the color {req.color_code}, worn outdoors by a model"
+    prompt = prompt = (
+    f"A beautiful young woman with a Californian appearance wearing a knitted wool sweater "
+    f"and a knitted hat, both in color {color_code}. She is outdoors in a natural setting, "
+    f"like a forest or park, with soft daylight. The photo is high-resolution, natural style, "
+    f"realistic fashion photography. The sweater and hat are clearly hand-knitted, with visible yarn texture."
+)
     try:
         response = openai.images.generate(
             model="dall-e-3",

@@ -88,6 +88,7 @@ async def generate_custom_item(request: Request):
             ]
         )
         description = response.choices[0].message.content
+        print("GPT-4o description:", description)
 
         # Промпт на основе описания
         prompt = (

@@ -63,9 +63,10 @@ async def handle_color_selection(update: Update, context: ContextTypes.DEFAULT_T
 
     prompt = await describe_image(photo_path)
     full_prompt = (
-        f"Recreate the clothing item based on the following description: {prompt}. "
-        f"The new version should be in yarn color {color_code}. Keep the original shape, texture, and style. "
-        f"Use a clean studio background. High detail."
+    f"You are given a description of a clothing item from a real photo: {prompt}. "
+    f"Generate the same garment, in {color_code} yarn color. "
+    f"Keep the original type of garment (e.g. jacket, dress, coat), its shape, tailoring, and details. "
+    f"The image should look like a studio photo, minimalistic background, ultra-realistic."
     )
 
     image_url = await generate_image(full_prompt)
@@ -104,7 +105,9 @@ async def describe_image(image_path):
         ]
     )
     return response.choices[0].message.content
-
+    description = response.choices[0].message.content
+print("GPT-4o description:", description)
+return description
 # === DALL·E: ГЕНЕРАЦИЯ ИЗОБРАЖЕНИЯ ===
 
 async def generate_image(prompt):

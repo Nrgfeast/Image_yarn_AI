@@ -79,13 +79,13 @@ async def handle_color_selection(update: Update, context: ContextTypes.DEFAULT_T
     photo_path = context.user_data.get("user_item_photo_path")
 
     prompt = await describe_image(photo_path)
+    color_text = COLOR_DESCRIPTIONS.get(color_code, color_code)
+
     full_prompt = (
-    f"You are given a description of a clothing item from a real photo: {prompt}. "
-    f"Generate the same garment, in {COLOR_DESCRIPTIONS.get(color_code, color_code)} yarn color. "
-    f"Keep the original type of garment (e.g. jacket, dress, coat), its shape, tailoring, and details. "
-    f"The image should look like a studio photo, minimalistic background, ultra-realistic."
-), its shape, tailoring, and details. "
-    f"The image should look like a studio photo, minimalistic background, ultra-realistic."
+        f"You are given a description of a clothing item from a real photo: {prompt}. "
+        f"Generate the same garment, in {color_text}. "
+        f"Keep the original type of garment (e.g. jacket, dress, coat), its shape, tailoring, and details. "
+        f"The image should look like a studio photo, minimalistic background, ultra-realistic."
     )
 
     image_url = await generate_image(full_prompt)

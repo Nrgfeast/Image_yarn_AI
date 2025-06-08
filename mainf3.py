@@ -139,7 +139,11 @@ async def generate_image(prompt, color_code=None, image_path=None):
     try:
         response = requests.post(
             "https://image-yarn-ai.onrender.com/generate_your_item",
-            json={"color_code": color_code, "image_base64": img_base64},
+            json={
+                "prompt": prompt,  # 💥 ЭТО ГЛАВНОЕ: передаём prompt
+                "color_code": color_code,
+                "image_base64": img_base64
+            },
             timeout=120
         )
         if response.status_code == 200:

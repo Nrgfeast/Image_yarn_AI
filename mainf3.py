@@ -88,7 +88,7 @@ async def handle_color_selection(update: Update, context: ContextTypes.DEFAULT_T
         f"The image should look like a studio photo, minimalistic background, ultra-realistic."
     )
 
-    image_url = await generate_image(full_prompt)
+    image_url = await generate_image(full_prompt, color_code=color_code, image_path=photo_path)
 
     if image_url:
         await query.message.reply_photo(
@@ -129,19 +129,27 @@ print("GPT-4o description:", description)
 return description
 # === DALL·E: ГЕНЕРАЦИЯ ИЗОБРАЖЕНИЯ ===
 
-async def generate_image(prompt):
-    client = openai.OpenAI()
+import requests
+
+async def generate_image(prompt, color_code=None, image_path=None):
+    with open(image_path, "rb") as f:
+        image_bytes = f.read()
+    img_base64 = base64.b64encode(image_bytes).decode("utf-8")
+
     try:
-        response = client.images.generate(
-            model="dall-e-3",
-            prompt=prompt,
-            size="1024x1024",
-            quality="standard",
-            n=1
+        response = requests.post(
+            "https://image-yarn-ai.onrender.com/generate_your_item",
+            json={"color_code": color_code, "image_base64": img_base64},
+            timeout=120
         )
-        return response.data[0].url
+        if response.status_code == 200:
+            data = response.json()
+            return data.get("url")
+        else:
+            print("Ошибка от сервера Render:", response.text)
+            return None
     except Exception as e:
-        print("Ошибка генерации:", e)
+        print("Ошибка запроса к Render:", e)
         return None
 
 # === РЕГИСТРАЦИЯ ХЕНДЛЕРОВ ===

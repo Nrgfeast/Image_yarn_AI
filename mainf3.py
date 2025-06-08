@@ -40,18 +40,18 @@ COLOR_CODES = [
 ]
 
 COLOR_DESCRIPTIONS = {
-    "D2077": "deep burgundy red",
-    "D2073B": "warm cranberry red",
-    "D2021": "light salmon pink",
-    "M125": "vintage coral beige",
-    "D2074": "muted mustard yellow",
-    "D2016": "natural wheat beige",
-    "D2090": "soft olive green",
-    "D2013": "calm emerald green",
-    "D2125": "cool blue gray",
-    "D2020": "sky blue denim",
-    "D2014": "lavender lilac",
-    "D2078": "charcoal gray black"
+    "D2077": "delicate lilac pink yarn",
+    "D2073B": "deep marsala red yarn",
+    "D2021": "warm terracotta orange yarn",
+    "M125": "soft pastel mint yarn",
+    "D2074": "dusty rose pink yarn",
+    "D2016": "light beige sand-colored yarn",
+    "D2090": "sky blue cotton yarn",
+    "D2013": "classic light gray yarn",
+    "D2125": "pale lavender violet yarn",
+    "D2020": "rich matte black yarn",
+    "D2014": "creamy off-white yarn",
+    "D2078": "deep navy ocean blue yarn"
 }
 
 

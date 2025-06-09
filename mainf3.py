@@ -84,9 +84,7 @@ async def handle_color_selection(update: Update, context: ContextTypes.DEFAULT_T
     f"Generate the same garment, in {COLOR_DESCRIPTIONS.get(color_code, color_code)} yarn color. "
     f"Keep the original type of garment (e.g. jacket, dress, coat), its shape, tailoring, and details. "
     f"The image should look like a studio photo, minimalistic background, ultra-realistic."
-), its shape, tailoring, and details. "
-    f"The image should look like a studio photo, minimalistic background, ultra-realistic."
-    )
+)
 
     image_url = await generate_image(full_prompt)
 

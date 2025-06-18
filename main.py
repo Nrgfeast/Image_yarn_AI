@@ -29,10 +29,10 @@ COLOR_DESCRIPTIONS = {
     "D2020": "golden sunflower yellow yarn",
     "D2014": "bold scarlet red yarn",
     "D2078": "black cherry yarn (nearly black red)",
-    "M143": "royal violet yarn with rich blue undertones",
-    "M137": "dusty plum yarn with muted purple-brown tone",
-    "M110": "pale taupe grey yarn with warm beige haze",
-    "M130": "deep chestnut brown yarn with reddish warmth"
+    "D2029": "royal violet yarn with rich blue undertones",
+    "M232": "dusty plum yarn with muted purple-brown tone",
+    "D2034": "pale taupe grey yarn with warm beige haze",
+    "D2000": "deep chestnut brown yarn with reddish warmth"
 }
 
 @app.post("/generate")

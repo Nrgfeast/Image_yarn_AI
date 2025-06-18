@@ -32,7 +32,7 @@ COLOR_DESCRIPTIONS = {
     "D2029": "royal violet yarn with rich blue undertones",
     "M232": "dusty plum yarn with muted purple-brown tone",
     "D2034": "pale taupe grey yarn with warm beige haze",
-    "D2000": "deep chestnut brown yarn with reddish warmth"
+    "D2000": "deep chestnut brown yarn with reddish warmth",
     "D2068": "soft lavender grey yarn with cool undertone",
     "D2116": "black spruce green yarn with forest depth",
     "M993": "dark mossy pine yarn with earthy depth",

@@ -33,6 +33,22 @@ COLOR_DESCRIPTIONS = {
     "M232": "dusty plum yarn with muted purple-brown tone",
     "D2034": "pale taupe grey yarn with warm beige haze",
     "D2000": "deep chestnut brown yarn with reddish warmth"
+    "D2068": "soft lavender grey yarn with cool undertone",
+    "D2116": "black spruce green yarn with forest depth",
+    "M993": "dark mossy pine yarn with earthy depth",
+    "M152": "fresh emerald green yarn with vibrant sheen",
+    "D2040": "muted olive yarn with natural hazel tone",
+    "D2039": "icy arctic blue yarn with frosted fuzz",
+    "D2095": "spring meadow green yarn with leaf softness",
+    "M193": "luminous chartreuse yarn with neon glow",
+    "D2033": "deep ocean blue yarn with denim intensity",
+    "M122": "dusty blue-grey yarn with soft overcast tone",
+    "D2044": "classic slate grey yarn with bluish tint",
+    "M267": "weathered steel yarn with stonewashed finish",
+    "M102": "foggy morning blue yarn with cool mist",
+    "M264": "powdered lilac yarn with porcelain base",
+    "M270": "hazy periwinkle yarn with gentle pastel glow",
+    "M195": "clear sky blue yarn with breezy vibrancy"
 }
 
 @app.post("/generate")

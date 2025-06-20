@@ -48,7 +48,23 @@ COLOR_DESCRIPTIONS = {
     "M102": "foggy morning blue yarn with cool mist",
     "M264": "powdered lilac yarn with porcelain base",
     "M270": "hazy periwinkle yarn with gentle pastel glow",
-    "M195": "clear sky blue yarn with breezy vibrancy"
+    "M195": "clear sky blue yarn with breezy vibrancy",
+    "M243": "deep rosewood yarn with earthy red warmth",
+    "D2067": "bold mulberry yarn with rich purple tone",
+    "D2066": "classic raspberry pink yarn with a satin sheen",
+    "M234": "dusty coral yarn with soft salmon undertone",
+    "D2033": "muted beige yarn with a grounded wheat hue",
+    "D2085": "camel sand yarn with warm tan depth",
+    "D2028": "honey oat yarn with creamy softness",
+    "M306": "pastel buttermilk yarn with golden warmth",
+    "D2084": "ash lilac yarn with a foggy violet veil",
+    "M233": "mauve grey yarn with whispery purple shadows",
+    "M110": "faded lavender yarn with gentle plum tint",
+    "M143": "powder rose yarn with a quiet vintage hue",
+    "M130": "rosy blossom yarn with fresh floral blush",
+    "D2089": "pink quartz yarn with dusty undertone",
+    "M137": "silver violet yarn with a cool iris glow",
+    "M107": "misty lilac yarn with soft bluish frost"
 }
 
 @app.post("/generate")

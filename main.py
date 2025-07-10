@@ -84,20 +84,33 @@ COLOR_DESCRIPTIONS = {
 }
 
 @app.post("/generate")
+@app.post("/generate")
 async def generate_image(request: Request):
     try:
         data = await request.json()
         color_code = data.get("color_code")
+        gender = data.get("gender", "gender_woman")  # По умолчанию — женская одежда
 
         if color_code not in COLOR_DESCRIPTIONS:
             return {"error": "Unknown color code"}
 
         color_text = COLOR_DESCRIPTIONS[color_code]
 
+        # Определение промпта в зависимости от пола
+        if gender == "gender_man":
+            subject = "A stylish young man is wearing a hand-knitted sweater and matching hat"
+            pronoun = "He"
+        elif gender == "gender_kids":
+            subject = "A smiling boy and girl are wearing hand-knitted outfits made from the same yarn"
+            pronoun = "They"
+        else:
+            subject = "A beautiful young woman is wearing a hand-knitted sweater and matching hat"
+            pronoun = "She"
+
         prompt = (
-            f"A beautiful young woman is wearing a hand-knitted sweater and matching hat made from {color_text}. "
+            f"{subject} made from {color_text}. "
             f"The yarn is fine and delicate, about 3mm thick, with a close-knit texture — not bulky or chunky. "
-            f"She stands outdoors in soft natural light. "
+            f"{pronoun} stands outdoors in soft natural light, and is shown in full body view. "
             f"The clothing is stylish, realistic, and fully knitted. Do not use any patterns or color variations."
         )
 

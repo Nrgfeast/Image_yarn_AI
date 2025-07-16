@@ -96,22 +96,26 @@ async def generate_image(request: Request):
 
         color_text = COLOR_DESCRIPTIONS[color_code]
 
-        # Определение промпта в зависимости от пола
+        # Выбор описания по полу
         if gender == "gender_man":
-            subject = "A stylish young man is wearing a hand-knitted sweater and matching hat"
-            pronoun = "He"
+            subject = "A confident young man is wearing a modern knitted pullover made from"
+            intro = "He is shown in full-body view, standing outdoors in soft natural light with a realistic masculine build."
         elif gender == "gender_kids":
-            subject = "A smiling boy and girl are wearing hand-knitted outfits made from the same yarn"
-            pronoun = "They"
-        else:
-            subject = "A beautiful young woman is wearing a hand-knitted sweater and matching hat"
-            pronoun = "She"
+            if random.random() < 0.55:
+                subject = "A smiling young boy is dressed in a handmade knitted sweater made from"
+                intro = "He is standing outside in full body view, head to toe visible, with casual posture and natural lighting."
+            else:
+                subject = "A cheerful little girl is wearing a hand-knitted outfit made from"
+                intro = "She is captured in full-body standing view, with playful posture in natural soft daylight."
+        else:  # gender_woman (по умолчанию)
+            subject = "A beautiful young woman is wearing a hand-knitted sweater and matching hat made from"
+            intro = "She is standing outdoors, visible in full body from head to toe, with soft natural light."
 
         prompt = (
-            f"{subject} made from {color_text}. "
+            f"{subject} {color_text}. "
             f"The yarn is fine and delicate, about 3mm thick, with a close-knit texture — not bulky or chunky. "
-            f"{pronoun} stands outdoors in soft natural light, and is shown in full body view. "
-            f"The clothing is stylish, realistic, and fully knitted. Do not use any patterns or color variations."
+            f"{intro} "
+            f"The clothing is stylish, realistic, and entirely knitted. Avoid patterns, logos, or color variations."
         )
 
         response = client.images.generate(

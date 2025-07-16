@@ -104,7 +104,7 @@ async def generate_image(request: Request):
         elif gender == "gender_kids":
             if random.random() < 0.55:
                 subject = "A smiling young boy is dressed in a handmade knitted sweater made from"
-                intro = "He is standing outside in full body view, head to toe visible, with casual posture and natural lighting."
+                intro = "He is standing outside the child is fully visible standing upright, full length view, head to toe visible, with casual posture and natural lighting."
             else:
                 subject = "A cheerful little girl is wearing a hand-knitted outfit made from"
                 intro = "She is captured in full-body standing view, with playful posture in natural soft daylight."

@@ -98,42 +98,39 @@ async def generate_image(request: Request):
         color_text = COLOR_DESCRIPTIONS[color_code]
 
         # Выбор описания по полу
-        # Выбор описания по полу
         if gender == "gender_man":
-            subject = "A confident young man is wearing a hand-knitted sweater made from"
+            subject = "A confident young man is modeling a modern knitted pullover made from"
             intro = (
-                "He is shown in a full-body standing view, visible from head to toe, outdoors in soft natural light. "
-                "He pairs the sweater with fitted jeans and modern sneakers. "
-                "His figure is realistic and photorealistic, with natural posture and proportions."
+                "He is shown in full-body standing pose outdoors in soft daylight. "
+                "His entire figure is visible from head to toe. "
+                "Include a second view of the same sweater on a hanger or displayed from the back."
             )
         elif gender == "gender_kids":
             if random.random() < 0.55:
-                subject = "A smiling young boy is wearing a hand-knitted sweater made from"
+                subject = "A smiling young boy is wearing a handmade knitted sweater made from"
                 intro = (
-                    "He is shown fully standing in daylight, visible from head to toe. "
-                    "He pairs the sweater with denim pants and sporty shoes. "
-                    "The child is photorealistic, natural in posture, and grounded in real-life clothing style."
+                    "The boy is shown alone in a full-body upright pose, head to toe visible, with a natural expression. "
+                    "Also include a second view of the sweater on a mannequin or hanging neatly."
                 )
             else:
-                subject = "A cheerful little girl is wearing a hand-knitted sweater made from"
+                subject = "A cheerful little girl is dressed in a hand-knitted sweater made from"
                 intro = (
-                    "She is fully visible standing upright, head to toe, in soft daylight. "
-                    "She combines the sweater with a skirt and ballet flats or sneakers. "
-                    "Her look is realistic, stylish, and clearly human, not stylized or cartoonish."
+                    "She is depicted standing playfully in full-body view outdoors in soft daylight. "
+                    "Also include a second perspective showing the back of the sweater or the same item on a display."
                 )
         else:  # gender_woman
-            subject = "A beautiful young woman is wearing a hand-knitted sweater and matching hat made from"
+            subject = "A beautiful young woman is modeling a hand-knitted sweater and matching hat made from"
             intro = (
-                "She is captured in full-body standing view, head to toe, outdoors in soft light. "
-                "She pairs the sweater with an elegant skirt or jeans and modern boots. "
-                "Her appearance is realistic, photorealistic, with clear fashion styling."
+                "She stands in soft daylight, visible fully from head to toe. "
+                "Show her wearing the outfit frontally, and include a second view from the back or on a hanger."
             )
 
         prompt = (
             f"{subject} {color_text}. "
             f"The yarn is fine and delicate, about 3mm thick, with a close-knit texture — not bulky or chunky. "
             f"{intro} "
-            f"The clothing is realistic and stylish. Avoid unrealistic textures, patterns, or cartoon-like rendering."
+            f"The clothing is stylish, realistic, and fully knitted. "
+            f"Avoid patterns, logos, or color variations. Focus on natural human proportions and fashion realism."
         )
 
         response = client.images.generate(

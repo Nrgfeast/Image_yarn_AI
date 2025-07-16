@@ -100,7 +100,7 @@ async def generate_image(request: Request):
         # Выбор описания по полу
         if gender == "gender_man":
             subject = "A confident young man is wearing a modern knitted pullover made from"
-            intro = "He is in the full figure is clearly visible from head to toe, standing outdoors in soft natural light with a realistic masculine build."
+            intro = "He is in the shown fully standing, full-body view, entire figure is in frame, standing outdoors in soft natural light with a realistic masculine build."
         elif gender == "gender_kids":
             if random.random() < 0.55:
                 subject = "A smiling young boy is dressed in a handmade knitted sweater made from"

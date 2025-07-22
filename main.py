@@ -107,16 +107,16 @@ async def generate_image(request: Request):
             )
         elif gender == "gender_kids":
             if random.random() < 0.55:
-                subject = "A smiling young boy is wearing a handmade knitted sweater made from"
+                subject = "A young boy (around 6 years old) is wearing a handmade modest knitted sweater made from"
                 intro = (
-                    "The boy is shown alone in a full-body upright pose, head to toe visible, with a natural expression. "
-                    "Also include a second view of the sweater on a mannequin or hanging neatly."
+                    "The boy is fully clothed, shown from head to toe in a relaxed standing pose. "
+                    "Include a second view of the sweater on a hanger or from behind. The design must clearly reflect children's fashion. Avoid anything suggestive."
                 )
             else:
-                subject = "A cheerful little girl is dressed in a hand-knitted sweater made from"
+                subject = "A little girl (around 5 years old) is wearing a modest, cozy hand-knitted sweater made from"
                 intro = (
-                    "She is depicted standing playfully in full-body view outdoors in soft daylight. "
-                    "Also include a second perspective showing the back of the sweater or the same item on a display."
+                    "She is shown fully clothed, standing in a natural relaxed pose, with a smile. "
+                    "Include a second view showing the sweater on a hanger or from the back. The design must clearly reflect a child's clothing. Avoid anything suggestive."
                 )
         else:  # gender_woman
             subject = "A beautiful young woman is modeling a hand-knitted sweater and matching hat made from"

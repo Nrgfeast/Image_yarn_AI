@@ -106,12 +106,20 @@ async def generate_image(request: Request):
                 "Include a second view of the same sweater on a hanger or displayed from the back."
             )
         elif gender == "gender_kids":
-            if random.random() < 0.55:
-                subject = "A young boy (around 6 years old) is wearing a handmade modest knitted sweater made from"
-                intro = (
-                    "The boy is fully clothed, shown from head to toe in a relaxed standing pose. "
-                    "Include a second view of the sweater on a hanger or from behind. The design must clearly reflect children's fashion. Avoid anything suggestive."
-                )
+    if random.random() < 0.55:
+        subject = "A child is wearing a cozy, handmade knitted sweater made from"
+        intro = (
+            "The child is standing outdoors in a natural pose, fully clothed. "
+            "Show the sweater clearly from the front. Also include a second view of the sweater laid flat or hanging. "
+            "Ensure the style is typical for children's clothing and completely appropriate."
+        )
+    else:
+        subject = "A child is modeling a warm hand-knitted outfit made from"
+        intro = (
+            "The child is fully dressed, standing in soft daylight. "
+            "Include a second view of the outfit from behind or on a hanger. "
+            "Keep everything age-appropriate and focused on clothing details."
+        )
             else:
                 subject = "A little girl (around 5 years old) is wearing a modest, cozy hand-knitted sweater made from"
                 intro = (

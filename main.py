@@ -120,19 +120,6 @@ async def generate_image(request: Request):
                     "Include a second view of the outfit from behind or on a hanger. "
                     "Keep everything age-appropriate and focused on clothing details."
                 )
-    else:
-        subject = "A child is modeling a warm hand-knitted outfit made from"
-        intro = (
-            "The child is fully dressed, standing in soft daylight. "
-            "Include a second view of the outfit from behind or on a hanger. "
-            "Keep everything age-appropriate and focused on clothing details."
-        )
-            else:
-                subject = "A little girl (around 5 years old) is wearing a modest, cozy hand-knitted sweater made from"
-                intro = (
-                    "She is shown fully clothed, standing in a natural relaxed pose, with a smile. "
-                    "Include a second view showing the sweater on a hanger or from the back. The design must clearly reflect a child's clothing. Avoid anything suggestive."
-                )
         else:  # gender_woman
             subject = "A beautiful young woman is modeling a hand-knitted sweater and matching hat made from"
             intro = (
